@@ -26,10 +26,7 @@ void printTempLog(
 void printAppSignature(String name) {
   Serial.print("\nSetup ");
   Serial.print(name);
-  Serial.print(" v0.0.1-");
-  Serial.print(__DATE__);
-  Serial.print("-");
-  Serial.print(__TIME__);
+  Serial.printf(" v0.0.1- (chipid: %08X, flashid: %08X)", ESP.getChipId(), spi_flash_get_id());
 }
 
 void flashLed(int timesRepeat)

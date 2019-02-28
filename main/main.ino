@@ -1,4 +1,6 @@
-// #include <avr/sleep.h>
+#include <osapi.h>
+#include <user_interface.h>
+
 const uint8_t LED_PIN = 0;
 const uint8_t SENSOR_D_PIN = 5;
 const uint8_t PUMP_PIN = 4;
@@ -6,7 +8,7 @@ const uint8_t PUMP_PIN = 4;
 String appName = "SmartCirculationPump";
 String apInitPass = "pametnapumpa82";
 
-boolean isConnected = false;
+boolean isConnected = false;  
 
 void setup()
 {
@@ -22,6 +24,9 @@ void setup()
   setupRegulation();
   // Indicate program started
   flashLed(3);
+
+  digitalWrite(LED_PIN, HIGH);
+  delay(200);
 }
 
 void loop()

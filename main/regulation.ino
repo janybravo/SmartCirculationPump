@@ -50,7 +50,7 @@ void regulationIteration()
 
   // call sensors.requestTemperatures() to issue a global temperature
   // request to all devices on the bus
-  Serial.print("Requesting temperatures... ");
+  Serial.print("\nRequesting OneWire temperatures... ");
   sensors.requestTemperatures(); // Send the command to get temperatures
   Serial.println("DONE");
   // After we got the temperatures, we can print them here.
