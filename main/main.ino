@@ -8,6 +8,8 @@ const uint8_t PUMP_PIN = 4;
 String appName = "SmartCirculationPump";
 String apInitPass = "pametnapumpa82";
 
+const uint32_t MODULE_UID = spi_flash_get_id();
+
 boolean isConnected = false;  
 
 void setup()
