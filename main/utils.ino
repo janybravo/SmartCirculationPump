@@ -5,12 +5,11 @@ String getPrettyTimestamp(uint32_t ts)
 }
 
 void printTempLog(
-  uint32_t timestamp, 
-  float tempSensorsDiff, 
-  float tempDiffVelocity,
-  float tempSensorDiffVelocityNorm,
-  boolean punpState
-  )
+    uint32_t timestamp,
+    float tempSensorsDiff,
+    float tempDiffVelocity,
+    float tempSensorDiffVelocityNorm,
+    boolean punpState)
 {
   Serial.print(getPrettyTimestamp(timestamp));
   Serial.print(" Temp. sensors diff.: ");
@@ -23,10 +22,15 @@ void printTempLog(
   Serial.println();
 }
 
-void printAppSignature(String name) {
-  Serial.print("\nSetup ");
-  Serial.print(name);
-  Serial.printf(" v0.0.1- (chipid: %08X, flashid: %08X)", ESP.getChipId(), spi_flash_get_id());
+void printAppSignature(String name)
+{
+  Serial.printf(
+      "%s v0.0.1-%s%s (chipid: %08X, flashid: %08X)",
+      name,
+      __DATE__,
+      __TIME__,
+      ESP.getChipId(),
+      spi_flash_get_id());
 }
 
 void flashLed(int timesRepeat)
