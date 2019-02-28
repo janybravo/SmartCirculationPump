@@ -30,7 +30,8 @@ void printAppSignature(String name)
       __DATE__,
       __TIME__,
       ESP.getChipId(),
-      spi_flash_get_id());
+      spi_flash_get_id()
+      );
 }
 
 void flashLed(int timesRepeat)
